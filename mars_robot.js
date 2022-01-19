@@ -11,3 +11,9 @@ function turnRight(rover) {
 function moveForward(rover) {
   console.log('moveForward was called');
 }
+
+// Create robot with property "direction"
+
+let robot = {
+  direction: 'N'
+}
