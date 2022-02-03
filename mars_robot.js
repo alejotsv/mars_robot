@@ -1,7 +1,27 @@
 // This is my Mars robot
 
 function turnLeft(rover) {
+  console.log('The rover is currently facing ' + rover.direction);
+
+  switch(rover.direction){
+    case "N":
+    rover.direction = "W";
+    break;
+
+    case "E":
+    rover.direction = "N";
+    break;
+
+    case "S":
+    rover.direction = "E";
+    break;
+
+    case "W":
+    rover.direction = "S";
+    break;
+  }
   console.log('turnLeft was called!');
+  console.log('The rover is now facing ' + rover.direction);
 }
  
 function turnRight(rover) {
@@ -17,3 +37,5 @@ function moveForward(rover) {
 let robot = {
   direction: 'N'
 }
+
+turnLeft(robot);
