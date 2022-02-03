@@ -25,7 +25,27 @@ function turnLeft(rover) {
 }
  
 function turnRight(rover) {
-  console.log('turnRight was called!');
+  console.log('The rover is currently facing ' + rover.direction);
+
+switch(rover.direction){
+  case "N":
+  rover.direction = "E";
+  break;
+
+  case "E":
+  rover.direction = "S";
+  break;
+
+  case "S":
+  rover.direction = "W";
+  break;
+
+  case "W":
+  rover.direction = "N";
+  break;
+}
+console.log('turnRight was called!');
+console.log('The rover is now facing ' + rover.direction);
 }
  
 function moveForward(rover) {
