@@ -25,6 +25,7 @@ function turnLeft(rover) {
     rover.direction = "S";
     break;
   }
+  keepLog('l',rover);
   console.log('turnLeft was called!');
   console.log('The rover is now facing ' + rover.direction);
 }
@@ -32,25 +33,26 @@ function turnLeft(rover) {
 function turnRight(rover) {
   console.log('The rover is currently facing ' + rover.direction);
 
-switch(rover.direction){
-  case "N":
-  rover.direction = "E";
-  break;
+  switch(rover.direction){
+    case "N":
+    rover.direction = "E";
+    break;
 
-  case "E":
-  rover.direction = "S";
-  break;
+    case "E":
+    rover.direction = "S";
+    break;
 
-  case "S":
-  rover.direction = "W";
-  break;
+    case "S":
+    rover.direction = "W";
+    break;
 
-  case "W":
-  rover.direction = "N";
-  break;
-}
-console.log('turnRight was called!');
-console.log('The rover is now facing ' + rover.direction);
+    case "W":
+    rover.direction = "N";
+    break;
+  }
+  keepLog('r',rover);
+  console.log('turnRight was called!');
+  console.log('The rover is now facing ' + rover.direction);
 }
  
 function moveForward(rover) {
@@ -74,6 +76,7 @@ function moveForward(rover) {
     rover.x--;
     break;
   }
+  keepLog('f',rover);
   console.log('moveForward was called');
   console.log('The rover is now facing ' + rover.direction);
   console.log('And located at x: ' + rover.x + ', y: ' + rover.y);
@@ -110,6 +113,11 @@ let robot = {
   travelLog: []
 }
 
-turnLeft(robot);
+console.log(robot.travelLog);
 
-movements('lllrr',robot);
+let theMovements = 'lllrrrflfrf';
+
+movements(theMovements,robot);
+
+console.log(theMovements);
+console.log(robot.travelLog);
