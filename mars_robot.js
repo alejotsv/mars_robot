@@ -59,7 +59,10 @@ function moveForward(rover) {
   console.log('The rover is currently facing ' + rover.direction);
   console.log('And located at x: ' + rover.x + ', y: ' + rover.y);
 
-  switch(rover.direction){
+  if((rover.x==0 && rover.direction=='W') || (rover.x==9 && rover.direction=='E') || (rover.y==0 && rover.direction=='N') || (rover.y==9 && rover.direction=='S')) {
+    console.log('Sorry, you are at the limit of the grid, you cannot move forward.')
+  } else {
+    switch(rover.direction){
     case "N":
     rover.y--;
     break;
@@ -79,7 +82,8 @@ function moveForward(rover) {
   keepLog('f',rover);
   console.log('moveForward was called');
   console.log('The rover is now facing ' + rover.direction);
-  console.log('And located at x: ' + rover.x + ', y: ' + rover.y);
+  console.log('And located at x: ' + rover.x + ', y: ' + rover.y);    
+  }  
 }
 
 // Create function to call movements based on string of letters
@@ -115,7 +119,7 @@ let robot = {
 
 console.log(robot.travelLog);
 
-let theMovements = 'lllrrrflfrf';
+let theMovements = 'rfffrfffllffrf';
 
 movements(theMovements,robot);
 
