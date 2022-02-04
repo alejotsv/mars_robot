@@ -1,5 +1,10 @@
 // This is my Mars robot
 
+// function to maintain a log of all movements
+function keepLog(char,rover){
+  rover.travelLog.push(char);
+}
+
 function turnLeft(rover) {
   console.log('The rover is currently facing ' + rover.direction);
 
@@ -101,7 +106,8 @@ function movements(string,rover){
 let robot = {
   direction: 'N',
   x: 0,
-  y: 0
+  y: 0,
+  travelLog: []
 }
 
 turnLeft(robot);
