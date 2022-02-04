@@ -74,6 +74,28 @@ function moveForward(rover) {
   console.log('And located at x: ' + rover.x + ', y: ' + rover.y);
 }
 
+// Create function to call movements based on string of letters
+function movements(string,rover){
+  for(let i=0; i<string.length; i++){
+    switch(string[i]){
+      case 'r':
+      turnRight(rover);
+      break;
+
+      case 'l':
+      turnLeft(rover);
+      break;
+
+      case 'f':
+      moveForward(rover);
+      break;
+
+      default:
+      console.log("Invalid command. Please use 'r', 'l', or 'f'");
+    }
+  }
+}
+
 // Create robot with property "direction"
 
 let robot = {
@@ -83,3 +105,5 @@ let robot = {
 }
 
 turnLeft(robot);
+
+movements('lllrr',robot);
